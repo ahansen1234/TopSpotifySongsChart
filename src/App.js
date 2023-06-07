@@ -1,25 +1,31 @@
-import logo from './logo.svg';
-import './App.css';
+import Chart from "chart.js/auto";
+import { CategoryScale } from "chart.js";
+import { useState } from "react";
+import { Data } from "./utils/Data";
+import PieChart from "./components/PieChart";
+import BarChart from "./components/BarChart";
+import "./App.css";
 
-function App() {
+Chart.register(CategoryScale);
+ 
+export default function App() {
+  const [chartData, setChartData] = useState({
+    labels: Data.map((data) => data.song), 
+    datasets: [
+      {
+        label: "Times Streamed 2022 ",
+        data: Data.map((data) => data.plays),
+        backgroundColor: Data.map((data) => data.color),
+        borderColor: "black",
+        borderWidth: 2
+      }
+    ]
+  });
+ 
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="chart-container">
+      <PieChart chartData={chartData} />
+      <BarChart chartData={chartData} />
     </div>
   );
 }
-
-export default App;

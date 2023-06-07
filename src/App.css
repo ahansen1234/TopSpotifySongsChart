@@ -13,6 +13,17 @@
   }
 }
 
+.chart-container{
+  text-align: center;
+  align-items: center;
+  height: 800px;
+  width: 700px;
+  padding: 10px;
+  align-self: center;
+  justify-content: center;
+  position: relative;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
