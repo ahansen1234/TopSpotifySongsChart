@@ -1,49 +1,49 @@
 export const Data = [
     {
         id: 1,
-        song: "BlindingLights",
-        artist: "TheWeeknd",
+        song: "Blinding Lights",
+        artist: "The Weeknd",
         plays: 3618,
         color:'blue'
     },
     {
         id: 2,
-        song: "ShapeOfYou",
-        artist: "EdSheeran",
+        song: "Shape Of You",
+        artist: "Ed Sheeran",
         plays: 3506,
         color:'red'
     },
     {
         id: 3,
-        song: "DanceMonkey",
-        artist: "TonesAndI",
+        song: "Dance Monkey",
+        artist: "Tones And I",
         plays: 2833,
         color:'yellow'
     },
     {
         id: 4,
-        song: "SomeoneYouLoved",
-        artist: "LewisCapaldi",
+        song: "Someone You Loved",
+        artist: "Lewis Capaldi",
         plays: 2814,
         color:'orange'
     },
     {
         id: 5,
         song: "Sunflower",
-        artist: "PostMalone",
+        artist: "Post Malone",
         plays: 2691,
         color:'aqua'
     },
     {
         id: 6,
         song: "Rockstar",
-        artist: "PostMalone",
+        artist: "Post Malone",
         plays: 2690,
         color:'green'
     },
     {
         id: 7,
-        song: "OneDance",
+        song: "One Dance",
         artist: "Drake",
         plays: 2658,
         color:'purple'
@@ -51,22 +51,23 @@ export const Data = [
     {
         id: 8,
         song: "Stay",
-        artist: "TheKidLaroi",
+        artist: "The Kid Laroi",
         plays: 2591,
         color:'gray'
     },
     {
         id: 9,
         song: "Closer",
-        artist: "TheChainsmokers",
+        artist: "The Chainsmokers",
         plays: 2553,
         color:'magenta'
     },
     {
         id: 10,
         song: "Believer",
-        artist: "ImagineDragons",
+        artist: "Imagine Dragons",
         plays: 2532,
         color:'violet'
     }
 ]
+

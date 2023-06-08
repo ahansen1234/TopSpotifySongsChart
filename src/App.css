@@ -16,8 +16,8 @@
 .chart-container{
   text-align: center;
   align-items: center;
-  height: 800px;
-  width: 700px;
+  height: auto;
+  width: auto;
   padding: 10px;
   align-self: center;
   justify-content: center;
