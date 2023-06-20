@@ -5,15 +5,15 @@ import { Line } from "react-chartjs-2";
 
 export const TempBarChart = ({ temperData }) => {
     return (
-      <div className="chart-container">
-        <h2 style={{ textAlign: "center" }}>Average Anual Temperatures (in degrees F) </h2>
+      <div>
+        <h2 style={{ textAlign: "center" }}>Average Anual Temperatures</h2>
         <Line
             data={temperData}
           options={{
               plugins: {
               title: {
-                display: false,
-                text: "Average Anual Temperatures (F) "
+                display: true,
+                text: "Average Anual Temperatures (in degrees F)"
                   },
               legend: {
                 display: false
@@ -21,10 +21,9 @@ export const TempBarChart = ({ temperData }) => {
                   
               },
               scales: {
-                
                 y: {
-                      min: 50,
-                    max: 55
+                    min: 50,
+                    max: 55,
                 }
             }
           }}

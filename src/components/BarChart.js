@@ -1,7 +1,7 @@
 import { Bar } from "react-chartjs-2";
 export const BarChart = ({ chartData }) => {
   return (
-    <div className="chart-container">
+    <div>
       <h2 style={{ textAlign: "center" }}>Top 10 Songs Streamed on Spotify</h2>
       <Bar
         data={chartData}
@@ -9,7 +9,7 @@ export const BarChart = ({ chartData }) => {
           plugins: {
             title: {
               display: true,
-              text: "Most Streamed Songs:"
+              text: "Most Streamed Songs (in millions):"
             },
             legend: {
               display: false

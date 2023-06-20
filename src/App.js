@@ -99,16 +99,35 @@ export default function App() {
  
   return (
     <div className="chart-container">
-      <TempBarChart temperData={temperData} />
-      <button onClick={onClick}> 1900 - 1925 </button>
-      <button onClick={secondQuarter}> 1925 - 1950 </button>
-      <button onClick={thirdQuarter}> 1950 - 1975 </button>
-      <button onClick={fourthQuarter}> 1975 - 2000 </button>
-      <button onClick={reset}> 1900 - 2000 </button>
-      <DoughnutChart chartData={chartData} />
-      <BarChart chartData={chartData} />
-      <LineChart ytData={ytData} />
-      
-    </div>
+      <div className="row">
+        <div className="column">
+          <div>
+            <h1> Interactive Graphs</h1>
+            <p>Created with ChartJs & Javascript </p>
+          </div>
+          <div className="card">
+
+            <TempBarChart temperData={temperData} />
+            <button onClick={onClick}> 1900 - 1925 </button>
+            <button onClick={secondQuarter}> 1925 - 1950 </button>
+            <button onClick={thirdQuarter}> 1950 - 1975 </button>
+            <button onClick={fourthQuarter}> 1975 - 2000 </button>
+            <button onClick={reset}> 1900 - 2000 </button>
+          </div>
+          <div className="card">
+            <BarChart chartData={chartData} />
+          </div>
+        </div>
+        <div className="column">
+          <div className="card">
+            <LineChart ytData={ytData} />
+            
+          </div>
+          <div className="card">
+            <DoughnutChart chartData={chartData} />
+          </div>
+        </div>
+      </div>
+      </div>
   );
 }
