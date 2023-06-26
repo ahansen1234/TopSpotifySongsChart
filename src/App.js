@@ -96,8 +96,8 @@ export default function App() {
     ]
   });
  
- 
-  return (
+  const ViewOne = () => {
+    return(
     <div className="chart-container">
       <div className="row">
         <div className="column">
@@ -112,7 +112,9 @@ export default function App() {
             <button onClick={secondQuarter}> 1925 - 1950 </button>
             <button onClick={thirdQuarter}> 1950 - 1975 </button>
             <button onClick={fourthQuarter}> 1975 - 2000 </button>
-            <button onClick={reset}> 1900 - 2000 </button>
+              <button onClick={reset}> 1900 - 2000 </button>
+            <button onClick={changeView}> Enlarge this Data</button>
+              
           </div>
           <div className="card">
             <BarChart chartData={chartData} />
@@ -127,7 +129,43 @@ export default function App() {
             <DoughnutChart chartData={chartData} />
           </div>
         </div>
+        </div>
       </div>
+    )
+  }
+
+  const changeView = () => {
+    setCurrentView("view2");
+  }
+  const fullView = () => {
+    setCurrentView("view1");
+  }
+  const ViewTwo = () => {
+    return (
+      <div className="card">
+
+      <TempBarChart temperData={temperData} />
+      <button onClick={onClick}> 1900 - 1925 </button>
+      <button onClick={secondQuarter}> 1925 - 1950 </button>
+      <button onClick={thirdQuarter}> 1950 - 1975 </button>
+      <button onClick={fourthQuarter}> 1975 - 2000 </button>
+        <button onClick={reset}> 1900 - 2000 </button>
+        <div> 
+        <button onClick={fullView}> Full Page View</button>
+
+        </div>
+    </div>
+    )
+  }
+  const [currentView, setCurrentView] = useState("view1");
+
+  return (
+    <div>
+        {
+          currentView === "view1" ? 
+          <ViewOne  /> : 
+          <ViewTwo  />
+       }
       </div>
   );
 }
