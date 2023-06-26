@@ -1,6 +1,6 @@
 import Chart from "chart.js/auto";
 import { CategoryScale } from "chart.js";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Data } from "./utils/Data";
 import { youtubeRevenue } from "./utils/YouTubeData";
 import DoughnutChart from "./components/DoughnutChart";
@@ -13,7 +13,7 @@ import { TempData } from "./utils/TempData";
 Chart.register(CategoryScale);
  
 export default function App() {
-  const [chartData, setChartData] = useState({
+  const chartData = ({
     labels: Data.map((data) => data.song),
     datasets: [
       {
@@ -24,8 +24,8 @@ export default function App() {
         borderWidth: 2
       }
     ]
-  })
-  const [ytData, setYtData] = useState({
+  });
+  const ytData = ({
     labels: youtubeRevenue.map((data) => data.year),
     datasets: [
       {
@@ -108,12 +108,12 @@ export default function App() {
           <div className="card">
 
             <TempBarChart temperData={temperData} />
-            <button onClick={onClick}> 1900 - 1925 </button>
-            <button onClick={secondQuarter}> 1925 - 1950 </button>
-            <button onClick={thirdQuarter}> 1950 - 1975 </button>
-            <button onClick={fourthQuarter}> 1975 - 2000 </button>
-              <button onClick={reset}> 1900 - 2000 </button>
-            <button onClick={changeView}> Enlarge this Data</button>
+            <button className="button-8" onClick={onClick}> 1900 - 1925 </button>
+            <button className="button-8" onClick={secondQuarter}> 1925 - 1950 </button>
+            <button className="button-8" onClick={thirdQuarter}> 1950 - 1975 </button>
+            <button className="button-8" onClick={fourthQuarter}> 1975 - 2000 </button>
+              <button className="button-8" onClick={reset}> 1900 - 2000 </button>
+            <button className="button-10" onClick={changeView}> Enlarge this Data</button>
               
           </div>
           <div className="card">
@@ -145,15 +145,13 @@ export default function App() {
       <div className="card">
 
       <TempBarChart temperData={temperData} />
-      <button onClick={onClick}> 1900 - 1925 </button>
-      <button onClick={secondQuarter}> 1925 - 1950 </button>
-      <button onClick={thirdQuarter}> 1950 - 1975 </button>
-      <button onClick={fourthQuarter}> 1975 - 2000 </button>
-        <button onClick={reset}> 1900 - 2000 </button>
-        <div> 
-        <button onClick={fullView}> Full Page View</button>
+      <button className="button-8" onClick={onClick}> 1900 - 1925 </button>
+      <button className="button-8" onClick={secondQuarter}> 1925 - 1950 </button>
+      <button className="button-8" onClick={thirdQuarter}> 1950 - 1975 </button>
+      <button className="button-8" onClick={fourthQuarter}> 1975 - 2000 </button>
+        <button className="button-8" onClick={reset}> 1900 - 2000 </button>
+        <button className="button-10" onClick={fullView}> Exit </button>
 
-        </div>
     </div>
     )
   }
